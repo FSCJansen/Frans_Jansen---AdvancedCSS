@@ -1,0 +1,78 @@
+@mixin icon($font-family) {
+    font-family: $font-family;
+    font-weight: 600;
+    display: inline-block;
+    width: 30px; 
+}
+
+@mixin social($bgcolor){
+    background-color: $bgcolor;
+    padding: 12px;   
+    position: relative; 
+    transition-duration: 750ms;
+    transition-property:all;        
+    transition-timing-function: ease;
+    right: -150px; 
+}
+
+.social-media{
+    position: fixed;
+    top: 25%;
+    right: 0px;
+    color: #ffffff;
+    font-family: $text-font-family;
+    font-size: 13px;
+    .blog {
+        @include social(#e17b77);
+        &:hover{
+            right: 0px;
+        } 
+        &:before {
+            content: "\f5fc";
+            @include icon("Font Awesome 5 Free");
+        }  
+    }
+    .facebook {
+        @include social(#3b5998);
+        &:hover{
+            right: 0px;
+        }  
+        &:before {
+            @include icon("Font Awesome 5 Brands");
+            content: "\f39e";
+        }   
+    }
+    .twitter {
+        @include social(#00aced);
+        &:hover{
+            right: 0px;
+        }
+        &:before {
+            content: "\f099";
+            @include icon("Font Awesome 5 Brands");
+        }   
+    }
+    .github {
+        @include social(#333);
+        &:hover{
+            right: 0px;
+        }
+        &:before {
+            content: "\f09b";
+            @include icon("Font Awesome 5 Brands");
+        } 
+    }
+    .linkedin {
+        @include social(#007bb6); 
+        &:hover{
+            right: 0px;
+        }
+        &:before {
+            content: "\f0e1";
+            @include icon("Font Awesome 5 Brands");
+        }  
+    }
+    a{
+        color: #fff;
+    }
+}
